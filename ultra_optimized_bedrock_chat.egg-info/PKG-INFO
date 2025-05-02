@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: ultra-optimized-bedrock-chat
-Version: 0.2.5
+Version: 0.2.7
 Summary: Super-ultra optimized AWS Bedrock chat interface (50 lines)
 Author-email: AWS Enthusiast <example@example.com>
 License-Expression: MIT

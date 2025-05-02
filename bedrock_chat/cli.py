@@ -25,12 +25,12 @@ def init_models(region="us-east-1", profile=None):
 def chat(rt, model, msg, hist=None):
     hist, txt, ic = hist or [], "", "anthropic" in model
     body = json.dumps({"anthropic_version": "bedrock-2023-05-31", "max_tokens": 1024, "messages": hist + [{"role": "user", "content": [{"type": "text", "text": msg}]}]} if ic else {"inputText": msg, "textGenerationConfig": {"maxTokenCount": 512}})
-    with live.Live(markdown.Markdown("")) as l:
+    with live.Live(markdown.Markdown("AI: ")) as l:
         for c in rt.invoke_model_with_response_stream(modelId=model, body=body).get("body"):
             if "chunk" in c:
                 d = json.loads(c["chunk"]["bytes"])
                 token = (d.get("delta", {}).get("text", "") if "delta" in d else "".join([b.get("text", "") for b in d.get("content", []) if b.get("type") == "text"])) if ic else d.get("completion", "")
-                txt += token; l.update(markdown.Markdown(txt))
+                txt += token; l.update(markdown.Markdown(f"AI: {txt}"))
     return txt, (hist + [{"role": "user", "content": [{"type": "text", "text": msg}]}, {"role": "assistant", "content": [{"type": "text", "text": txt}]}]) if txt.strip() else hist
 
 @app.callback(invoke_without_command=True)
@@ -47,11 +47,12 @@ def start_chat(clear: bool = False, all: bool = False):
     for a,i in sorted(ms.items(), key=lambda x: (x[0] not in en, x[0])):
         if all or a in en: t.add_row(a, i[:40]+"..." if len(i)>40 else i)
     con.print(t); hist = []
-    model = (c := typer.prompt("Model")).split(":")[0] if ":" in c and not c.startswith(("arn:", "us.")) else c if c.startswith(("arn:", "us.")) else ms.get(c)
+    c = typer.prompt("Model")
+    model = ms.get(c) if c in ms else (c if c.startswith(("arn:", "us.")) else None)
     if not model: con.print("Model not found!"); return
     while (msg := typer.prompt("", prompt_suffix="You: ")) != "exit":
         if msg == "clear": hist = []; con.print("History cleared"); continue
-        try: con.print("AI:", end=" "); r, hist = chat(rt, model, msg, hist); con.print() if r.strip() else con.print("No response")
+        try: r, hist = chat(rt, model, msg, hist); con.print() if r.strip() else con.print("AI: No response")
         except Exception as e: con.print(f"Error: {e}")
 
 if __name__ == "__main__": app()
