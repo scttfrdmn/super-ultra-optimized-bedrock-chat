@@ -1,0 +1,5 @@
+[console_scripts]
+super-ultra-bedrock-chat = bedrock_chat.cli:app
+super-ultra-optimized-bedrock-chat = bedrock_chat.cli:app
+ultra-bedrock-chat = bedrock_chat.cli:app
+ultra-optimized-bedrock-chat = bedrock_chat.cli:app

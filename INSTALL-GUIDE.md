@@ -1,6 +1,6 @@
 # Installation Guide
 
-This guide shows how to build and install the `ultra-optimized-bedrock-chat` package.
+This guide shows how to build and install the `super-ultra-optimized-bedrock-chat` package.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ pip install build
 python -m build
 
 # Install with pipx
-pipx install dist/ultra_optimized_bedrock_chat-0.2.1-py3-none-any.whl
+pipx install dist/super_ultra_optimized_bedrock_chat-0.3.0-py3-none-any.whl
 ```
 
 For development/editable install:
@@ -48,7 +48,7 @@ pip install -e .
 Once the package is published to PyPI, you can install it directly:
 
 ```bash
-pipx install ultra-optimized-bedrock-chat
+pipx install super-ultra-optimized-bedrock-chat
 ```
 
 ## Verifying Installation
@@ -56,7 +56,7 @@ pipx install ultra-optimized-bedrock-chat
 After installation, you should be able to run:
 
 ```bash
-ultra-bedrock-chat --help
+super-ultra-bedrock-chat --help
 ```
 
 This should display the help information for the application.

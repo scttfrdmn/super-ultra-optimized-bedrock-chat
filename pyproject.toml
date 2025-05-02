@@ -37,8 +37,8 @@ super-ultra-bedrock-chat = "bedrock_chat.cli:app"
 super-ultra-optimized-bedrock-chat = "bedrock_chat.cli:app"
 
 [project.urls]
-"Homepage" = "https://github.com/username/super-ultra-optimized-bedrock-chat"
-"Bug Tracker" = "https://github.com/username/super-ultra-optimized-bedrock-chat/issues"
+"Homepage" = "https://github.com/scttfrdmn/super-ultra-optimized-bedrock-chat"
+"Bug Tracker" = "https://github.com/scttfrdmn/super-ultra-optimized-bedrock-chat/issues"
 
 [tool.setuptools]
 packages = ["bedrock_chat"]

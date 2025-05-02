@@ -1,8 +1,34 @@
+Metadata-Version: 2.4
+Name: super-ultra-optimized-bedrock-chat
+Version: 0.3.0
+Summary: Super-ultra optimized AWS Bedrock chat interface (36 lines)
+Author-email: AWS Enthusiast <example@example.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/username/super-ultra-optimized-bedrock-chat
+Project-URL: Bug Tracker, https://github.com/username/super-ultra-optimized-bedrock-chat/issues
+Keywords: aws,bedrock,chatbot,ai,cli,optimized,minimal
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: User Interfaces
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3>=1.28.0
+Requires-Dist: typer>=0.9.0
+Requires-Dist: rich>=13.3.5
+Dynamic: license-file
+
 # Super-Ultra-Optimized Bedrock Chat in 36 Lines!
 
 A complete AWS Bedrock chat interface that keeps shrinking - now 36 lines of Python magic! 🚀
 
-![GitHub License](https://img.shields.io/github/license/scttfrdmn/super-ultra-optimized-bedrock-chat)
+![GitHub License](https://img.shields.io/github/license/yourusername/super-ultra-optimized-bedrock-chat)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Lines of Code](https://img.shields.io/badge/code-36%20lines-brightgreen)
 ![Lines of README](https://img.shields.io/badge/readme-229%20lines-yellow)
