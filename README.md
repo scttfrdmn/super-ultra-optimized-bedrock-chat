@@ -92,24 +92,14 @@ ultra-bedrock-chat
 - `--profile`: AWS profile to use (default: None, uses default profile)
 - `--allow-provisioned`: Allow access to models requiring provisioned throughput (hourly billing)
 
-### Commands
-- **Default** (no command): Start chat interface
-  ```bash
-  ultra-bedrock-chat [--clear] [--all]
-  ```
-  - `--clear`: Clear terminal before starting
-  - `--all`: Show all models, not just enabled ones
+### Command Options
+```bash
+ultra-bedrock-chat [--clear] [--all] [--allow-provisioned]
+```
 
-- **list-models**: List all available models
-  ```bash
-  ultra-bedrock-chat list-models
-  ```
-
-- **list-provisioned**: Check active provisioned throughput commitments
-  ```bash
-  ultra-bedrock-chat list-provisioned
-  ```
-  ⚠️ Use this command to see what provisioned throughput you're being billed for
+- `--clear`: Clear terminal before starting
+- `--all`: Show all models, not just enabled ones
+- `--allow-provisioned`: Show models that require provisioned throughput (hourly billing)
 
 Don't worry, these instructions are already longer than several functions in the actual code!
 
@@ -171,10 +161,7 @@ Provisioned throughput models incur **hourly charges** regardless of usage:
 - Charges continue until you explicitly delete the provisioned throughput in the AWS console
 - Using this CLI tool does NOT automatically remove provisioned throughput
 - You are billed for the entire commitment period (1-month or 6-months)
-- Run the dedicated command to check your active commitments:
-  ```
-  ultra-bedrock-chat list-provisioned
-  ```
+- You can manage provisioned throughput through the AWS console or AWS CLI
 
 ### Multiple Model Types
 
