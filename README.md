@@ -1,10 +1,10 @@
-# Ultra-Optimized Bedrock Chat
+# Ultra-Optimized Bedrock Chat in 37 Lines!
 
-A complete AWS Bedrock chat interface in under 50 lines of code! 🚀
+A complete AWS Bedrock chat interface that keeps shrinking - now 37 lines of Python magic! 🚀
 
 ![GitHub License](https://img.shields.io/github/license/yourusername/ultra-optimized-bedrock-chat)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![Lines of Code](https://img.shields.io/badge/code-49%20lines-brightgreen)
+![Lines of Code](https://img.shields.io/badge/code-37%20lines-brightgreen)
 ![Lines of README](https://img.shields.io/badge/readme-140%2B%20lines-yellow)
 
 > **Yes, this README is 3x longer than the entire codebase.** 
@@ -15,7 +15,7 @@ A complete AWS Bedrock chat interface in under 50 lines of code! 🚀
 
 This project demonstrates the art of code optimization taken to its limits:
 
-- **49 lines total** - A complete, production-ready chatbot in fewer lines than most class definitions
+- **37 lines total** - A complete, production-ready chatbot in fewer lines than most class definitions
 - **No functionality compromises** - All features of a pro-grade AWS chatbot in a tiny footprint
 - **Maximum readability** - Still maintainable despite extreme optimization
 
@@ -48,7 +48,7 @@ Despite its tiny size, this chatbot packs an impressive set of capabilities:
 
 | Feature | Ultra-Optimized-Bedrock-Chat | Typical Implementation | This README |
 |---------|------------------------------|------------------------|-------------|
-| Lines of code | 49 | 500-1000+ | 140+ |
+| Lines of code | 37 | 500-1000+ | 140+ |
 | File size | ~2KB | 20-50KB | ~5KB |
 | Dependencies | 3 | 10-20+ | 0 |
 | Features | Complete set | Comparable | Just words |
@@ -58,13 +58,13 @@ Despite its tiny size, this chatbot packs an impressive set of capabilities:
 Install with pipx (recommended):
 
 ```bash
-pipx install ultra-optimized-bedrock-chat==0.2.1
+pipx install ultra-optimized-bedrock-chat==0.2.8
 ```
 
 Or with pip:
 
 ```bash
-pip install ultra-optimized-bedrock-chat==0.2.1
+pip install ultra-optimized-bedrock-chat==0.2.8
 ```
 
 ### Why pipx?
@@ -119,7 +119,7 @@ If we had applied these same techniques to this README, it would be about 5 line
 ## 📝 Example Session
 
 ```
-┌─────────────────────── Ultra Bedrock Chat v0.2.7 ────────────────────────┐
+┌─────────────────────── Ultra Bedrock Chat v0.2.8 ────────────────────────┐
 │ Model           Type               ID                                    │
 │ claude-haiku    On-Demand          anthropic.claude-3-haiku-20240307-v1:0│
 │ claude-opus     On-Demand          anthropic.claude-3-opus-20240229-v1:0 │
@@ -177,14 +177,13 @@ The chatbot automatically discovers and supports:
 Let's look at exactly how small this code is:
 
 ```
-Total lines of code: 49
+Total lines of code: 37
 
 Breakdown:
-- 1 line: shebang and docstring
+- 1 line: shebang
 - 4 lines: imports 
 - 1 line: app and console initialization
-- 30 lines: Chat class including initialization, model discovery, and streaming
-- 13 lines: chat command function and execution
+- 31 lines: main function including model discovery, display, and streaming
 ```
 
 The file is approximately 2.1 KB in size, which is remarkably small for a full-featured chatbot.
@@ -223,7 +222,7 @@ MIT
 
 ---
 
-*This README contains 170+ lines explaining 49 lines of code, and that's perfectly fine. In fact, we're quite proud of it!*
+*This README contains 170+ lines explaining 37 lines of code, and that's perfectly fine. In fact, we're quite proud of it!*
 
 
 
