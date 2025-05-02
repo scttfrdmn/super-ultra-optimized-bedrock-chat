@@ -24,9 +24,9 @@ This project demonstrates the art of code optimization taken to its limits:
 Despite its tiny size, this chatbot packs an impressive set of capabilities:
 
 - **Model Versatility**
-  - Foundation model support (Claude, Llama, Titan, etc.)
+  - Foundation model support (Claude, Titan, etc.)
   - Cross-region inference profile support
-  - **Provisioned throughput model support**
+  - **Provisioned throughput model support** (Claude 3.7 and others)
   - ARN direct input for any model type
   - **Automatic model availability detection**
 
@@ -86,11 +86,29 @@ Simply run:
 ultra-bedrock-chat
 ```
 
-Options:
+### Options
+- `--version` / `-v`: Display version number
 - `--region`: AWS region to use (default: us-east-1)
 - `--profile`: AWS profile to use (default: None, uses default profile)
-- `--clear`: Clear terminal before starting
-- `--all`: Show all models, not just enabled ones
+
+### Commands
+- **Default** (no command): Start chat interface
+  ```bash
+  ultra-bedrock-chat [--clear] [--all]
+  ```
+  - `--clear`: Clear terminal before starting
+  - `--all`: Show all models, not just enabled ones
+
+- **list-models**: List all available models
+  ```bash
+  ultra-bedrock-chat list-models
+  ```
+
+- **list-provisioned**: Check active provisioned throughput commitments
+  ```bash
+  ultra-bedrock-chat list-provisioned
+  ```
+  ⚠️ Use this command to see what provisioned throughput you're being billed for
 
 Don't worry, these instructions are already longer than several functions in the actual code!
 
@@ -110,20 +128,22 @@ If we had applied these same techniques to this README, it would be about 5 line
 ## 📝 Example Session
 
 ```
-┌────────── Models ✓=Enabled ────────────┐
-│ Alias         ID           Access       │
-│ claude-sonnet anthropic... On-Demand  ✓ │
-│ claude-opus   anthropic... On-Demand  ✓ │
-│ titan-text    amazon.ti... On-Demand  ✓ │
-│ prov-claude37 arn:aws:b... Provisioned✓ │
-└─────────────────────────────────────────┘
+┌─────────────────────── Ultra Bedrock Chat v0.2.7 ────────────────────────┐
+│ Model           Type               ID                                    │
+│ claude-haiku    On-Demand          anthropic.claude-3-haiku-20240307-v1:0│
+│ claude-opus     On-Demand          anthropic.claude-3-opus-20240229-v1:0 │
+│ claude-sonnet   On-Demand          anthropic.claude-3-sonnet-20240229-v1:0│
+│ claude-3-7      [bold red]Provisioned $[/bold red]  us.anthropic.claude-3-7-sonnet-20240620...│
+└──────────────────────────────────────────────────────────────────────────┘
 
-Model (name/ID/ARN): claude-sonnet
-Using anthropic.claude-3-5-sonnet-20240620-v1:0 (exit/clear)
+Model: claude-sonnet
+Using anthropic.claude-3-sonnet-20240229-v1:0
 
 You: Explain quantum computing in two sentences
 
 AI: Quantum computing leverages quantum mechanical phenomena like superposition and entanglement to perform computations that would be impractical for classical computers. Unlike classical bits that are either 0 or 1, quantum bits (qubits) can exist in multiple states simultaneously, enabling exponential computational advantages for specific problems like factoring large numbers and simulating quantum systems.
+
+You: exit
 ```
 
 That example transcript alone is almost 20% the size of our entire codebase!
@@ -134,11 +154,23 @@ That example transcript alone is almost 20% the size of our entire codebase!
 
 This chatbot supports AWS Bedrock's provisioned throughput models, which provide dedicated capacity for high-volume usage:
 
-1. From the model selection menu, choose any model with the `prov-` prefix
+1. From the model selection menu, choose any model with the `[Provisioned $]` type indicator
 2. Or directly enter a provisioned model ARN:
    ```
    Model (name/ID/ARN): arn:aws:bedrock:us-east-1:123456789012:provisioned-model/abcdef123456
    ```
+
+⚠️ **IMPORTANT: Cost Warning** ⚠️
+
+Provisioned throughput models incur **hourly charges** regardless of usage:
+
+- Charges continue until you explicitly delete the provisioned throughput in the AWS console
+- Using this CLI tool does NOT automatically remove provisioned throughput
+- You are billed for the entire commitment period (1-month or 6-months)
+- Run the dedicated command to check your active commitments:
+  ```
+  ultra-bedrock-chat list-provisioned
+  ```
 
 ### Multiple Model Types
 
@@ -146,6 +178,8 @@ The chatbot automatically discovers and supports:
 - Foundation models (pay-as-you-go)
 - Cross-region inference profiles
 - Provisioned throughput models
+
+> **Note on Model Availability**: This tool only works with models available through AWS Bedrock. OpenAI models (GPT-3.5, GPT-4, GPT-4o) are not available on Bedrock and require using OpenAI's API directly.
 
 ## 📏 Detailed Code Breakdown
 
