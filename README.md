@@ -2,7 +2,7 @@
 
 A complete AWS Bedrock chat interface that keeps shrinking - now 36 lines of Python magic! 🚀
 
-![GitHub License](https://img.shields.io/github/license/scttfrdmn/super-ultra-optimized-bedrock-chat)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Lines of Code](https://img.shields.io/badge/code-36%20lines-brightgreen)
 ![Lines of README](https://img.shields.io/badge/readme-229%20lines-yellow)
