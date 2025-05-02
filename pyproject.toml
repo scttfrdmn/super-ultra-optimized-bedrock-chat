@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ultra-optimized-bedrock-chat"
-version = "0.1.0"
+version = "0.2.5"
 description = "Super-ultra optimized AWS Bedrock chat interface (50 lines)"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "AWS Enthusiast", email = "example@example.com"}
 ]
@@ -17,7 +17,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -33,6 +32,7 @@ dependencies = [
 
 [project.scripts]
 ultra-bedrock-chat = "bedrock_chat.cli:app"
+ultra-optimized-bedrock-chat = "bedrock_chat.cli:app"
 
 [project.urls]
 "Homepage" = "https://github.com/username/ultra-optimized-bedrock-chat"

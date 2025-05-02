@@ -28,13 +28,19 @@ pip install build
 python -m build
 
 # Install with pipx
-pipx install dist/ultra_optimized_bedrock_chat-0.1.0-py3-none-any.whl
+pipx install dist/ultra_optimized_bedrock_chat-0.2.1-py3-none-any.whl
 ```
 
 For development/editable install:
 
 ```bash
-pipx install -e .
+# Using pip for editable install
+pip install -e .
+
+# Or using pipx with venv
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -e .
 ```
 
 ## Option 2: Install from PyPI (when published)
@@ -77,6 +83,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 - **Permission errors**: On Unix-like systems, ensure the script is executable
 - **AWS credentials errors**: Verify your AWS credentials are correctly configured
 - **Model access errors**: Make sure you have requested access to the models in the AWS console
+- **UnboundLocalError for 'tbl'**: Make sure you're using version 0.2.1 or newer
 
 ## Why Use pipx?
 

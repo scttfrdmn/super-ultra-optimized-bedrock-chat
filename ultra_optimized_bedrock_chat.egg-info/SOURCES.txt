@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+bedrock_chat/__init__.py
+bedrock_chat/__version__.py
+bedrock_chat/cli.py
+bedrock_chat/py.typed
+ultra_optimized_bedrock_chat.egg-info/PKG-INFO
+ultra_optimized_bedrock_chat.egg-info/SOURCES.txt
+ultra_optimized_bedrock_chat.egg-info/dependency_links.txt
+ultra_optimized_bedrock_chat.egg-info/entry_points.txt
+ultra_optimized_bedrock_chat.egg-info/requires.txt
+ultra_optimized_bedrock_chat.egg-info/top_level.txt

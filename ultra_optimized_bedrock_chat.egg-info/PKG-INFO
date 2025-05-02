@@ -1,3 +1,29 @@
+Metadata-Version: 2.4
+Name: ultra-optimized-bedrock-chat
+Version: 0.2.5
+Summary: Super-ultra optimized AWS Bedrock chat interface (50 lines)
+Author-email: AWS Enthusiast <example@example.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/username/ultra-optimized-bedrock-chat
+Project-URL: Bug Tracker, https://github.com/username/ultra-optimized-bedrock-chat/issues
+Keywords: aws,bedrock,chatbot,ai,cli,optimized,minimal
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: User Interfaces
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3>=1.28.0
+Requires-Dist: typer>=0.9.0
+Requires-Dist: rich>=13.3.5
+Dynamic: license-file
+
 # Ultra-Optimized Bedrock Chat
 
 A complete AWS Bedrock chat interface in under 50 lines of code! 🚀
