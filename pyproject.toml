@@ -3,9 +3,9 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ultra-optimized-bedrock-chat"
-version = "0.2.8"
-description = "Super-ultra optimized AWS Bedrock chat interface (37 lines)"
+name = "super-ultra-optimized-bedrock-chat"
+version = "0.3.0"
+description = "Super-ultra optimized AWS Bedrock chat interface (36 lines)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
@@ -33,10 +33,12 @@ dependencies = [
 [project.scripts]
 ultra-bedrock-chat = "bedrock_chat.cli:app"
 ultra-optimized-bedrock-chat = "bedrock_chat.cli:app"
+super-ultra-bedrock-chat = "bedrock_chat.cli:app"
+super-ultra-optimized-bedrock-chat = "bedrock_chat.cli:app"
 
 [project.urls]
-"Homepage" = "https://github.com/username/ultra-optimized-bedrock-chat"
-"Bug Tracker" = "https://github.com/username/ultra-optimized-bedrock-chat/issues"
+"Homepage" = "https://github.com/username/super-ultra-optimized-bedrock-chat"
+"Bug Tracker" = "https://github.com/username/super-ultra-optimized-bedrock-chat/issues"
 
 [tool.setuptools]
 packages = ["bedrock_chat"]

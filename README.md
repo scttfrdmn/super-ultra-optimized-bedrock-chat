@@ -1,13 +1,13 @@
-# Ultra-Optimized Bedrock Chat in 37 Lines!
+# Super-Ultra-Optimized Bedrock Chat in 36 Lines!
 
-A complete AWS Bedrock chat interface that keeps shrinking - now 37 lines of Python magic! 🚀
+A complete AWS Bedrock chat interface that keeps shrinking - now 36 lines of Python magic! 🚀
 
-![GitHub License](https://img.shields.io/github/license/yourusername/ultra-optimized-bedrock-chat)
+![GitHub License](https://img.shields.io/github/license/yourusername/super-ultra-optimized-bedrock-chat)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![Lines of Code](https://img.shields.io/badge/code-37%20lines-brightgreen)
-![Lines of README](https://img.shields.io/badge/readme-140%2B%20lines-yellow)
+![Lines of Code](https://img.shields.io/badge/code-36%20lines-brightgreen)
+![Lines of README](https://img.shields.io/badge/readme-229%20lines-yellow)
 
-> **Yes, this README is 3x longer than the entire codebase.** 
+> **Yes, this README is nearly 5x longer than the entire codebase!** 
 > 
 > *We spent so much time optimizing the code that we had plenty left over for documentation!*
 
@@ -15,7 +15,7 @@ A complete AWS Bedrock chat interface that keeps shrinking - now 37 lines of Pyt
 
 This project demonstrates the art of code optimization taken to its limits:
 
-- **37 lines total** - A complete, production-ready chatbot in fewer lines than most class definitions
+- **36 lines total** - A complete, production-ready chatbot in fewer lines than most class definitions
 - **No functionality compromises** - All features of a pro-grade AWS chatbot in a tiny footprint
 - **Maximum readability** - Still maintainable despite extreme optimization
 
@@ -46,10 +46,10 @@ Despite its tiny size, this chatbot packs an impressive set of capabilities:
 
 ## 📊 Size Comparison
 
-| Feature | Ultra-Optimized-Bedrock-Chat | Typical Implementation | This README |
+| Feature | Super-Ultra-Optimized-Bedrock-Chat | Typical Implementation | This README |
 |---------|------------------------------|------------------------|-------------|
-| Lines of code | 37 | 500-1000+ | 140+ |
-| File size | ~2KB | 20-50KB | ~5KB |
+| Lines of code | 36 | 500-1000+ | 229 |
+| File size | 3.9KB | 20-50KB | 9.3KB |
 | Dependencies | 3 | 10-20+ | 0 |
 | Features | Complete set | Comparable | Just words |
 
@@ -58,13 +58,13 @@ Despite its tiny size, this chatbot packs an impressive set of capabilities:
 Install with pipx (recommended):
 
 ```bash
-pipx install ultra-optimized-bedrock-chat==0.2.8
+pipx install super-ultra-optimized-bedrock-chat==0.3.0
 ```
 
 Or with pip:
 
 ```bash
-pip install ultra-optimized-bedrock-chat==0.2.8
+pip install super-ultra-optimized-bedrock-chat==0.3.0
 ```
 
 ### Why pipx?
@@ -83,7 +83,7 @@ See the [INSTALL-GUIDE.md](INSTALL-GUIDE.md) for detailed installation instructi
 Simply run:
 
 ```bash
-ultra-bedrock-chat
+super-ultra-bedrock-chat
 ```
 
 ### Options
@@ -94,7 +94,7 @@ ultra-bedrock-chat
 
 ### Command Options
 ```bash
-ultra-bedrock-chat [--clear] [--all] [--allow-provisioned]
+super-ultra-bedrock-chat [--clear] [--all] [--allow-provisioned]
 ```
 
 - `--clear`: Clear terminal before starting
@@ -119,7 +119,7 @@ If we had applied these same techniques to this README, it would be about 5 line
 ## 📝 Example Session
 
 ```
-┌─────────────────────── Ultra Bedrock Chat v0.2.8 ────────────────────────┐
+┌─────────────────────── Super Ultra Bedrock Chat v0.3.0 ────────────────────────┐
 │ Model           Type               ID                                    │
 │ claude-haiku    On-Demand          anthropic.claude-3-haiku-20240307-v1:0│
 │ claude-opus     On-Demand          anthropic.claude-3-opus-20240229-v1:0 │
@@ -148,7 +148,7 @@ This chatbot supports AWS Bedrock's provisioned throughput models, which provide
 1. **Access requires opt-in**: By default, provisioned throughput models are hidden
 2. Start with the `--allow-provisioned` flag to see available provisioned models:
    ```
-   ultra-bedrock-chat --allow-provisioned
+   super-ultra-bedrock-chat --allow-provisioned
    ```
 3. Choose a model with the `[Provisioned $]` type indicator from the menu
 
@@ -177,24 +177,24 @@ The chatbot automatically discovers and supports:
 Let's look at exactly how small this code is:
 
 ```
-Total lines of code: 37
+Total lines of code: 36
 
 Breakdown:
 - 1 line: shebang
 - 4 lines: imports 
 - 1 line: app and console initialization
-- 31 lines: main function including model discovery, display, and streaming
+- 30 lines: main function including model discovery, display, and streaming
 ```
 
-The file is approximately 2.1 KB in size, which is remarkably small for a full-featured chatbot.
+The file is just 3.9 KB in size (with the README being 2.4× larger at 9.3 KB), which is remarkably small for a full-featured chatbot.
 
 For perspective:
 - A typical "Hello World" example with these libraries: 10-15 lines
-- This README file: 170+ lines
-- A typical AWS Bedrock integration: 500+ lines
+- This README file: 229 lines (6.4x larger than the code!)
+- A typical AWS Bedrock integration: 500+ lines (14x larger)
 - The number of lines in average Python packages to accomplish the same task: thousands
 
-Even the docstring in some enterprise Python modules is longer than our entire application!
+Even the docstring in some enterprise Python modules is longer than our entire application! We've managed to implement a complete chatbot in fewer lines than most function docstrings.
 
 ## 🔍 Why So Small?
 
@@ -204,9 +204,11 @@ The result is not just a technical showcase but a genuinely useful tool that's e
 
 ## 📏 The README Paradox
 
-In a delightful twist of irony, this README is approximately 3 times longer than the actual code it describes. We like to think of it as the software development equivalent of writing "I'm sorry this letter is so long, I didn't have time to make it shorter."
+In a delightful twist of irony, this README is 6.4 times longer than the actual code it describes. We like to think of it as the software development equivalent of writing "I'm sorry this letter is so long, I didn't have time to make it shorter."
 
 Creating extremely concise, functional code actually requires more effort than verbose code. Similarly, a comprehensive yet concise README takes considerable effort. We just focused our brevity efforts on the code rather than the documentation!
+
+The fact that this documentation is over 600% larger than the codebase it describes should give you an idea of just how optimized the code truly is.
 
 ## 🔧 Requirements
 
@@ -222,7 +224,7 @@ MIT
 
 ---
 
-*This README contains 170+ lines explaining 37 lines of code, and that's perfectly fine. In fact, we're quite proud of it!*
+*This README contains 229 lines explaining 36 lines of code (a 6.4:1 ratio), and that's perfectly fine. In fact, we're quite proud of it!*
 
 
 
