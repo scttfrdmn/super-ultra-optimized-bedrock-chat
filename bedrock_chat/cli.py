@@ -29,7 +29,7 @@ def chat(rt, model, msg, hist=None):
         for c in rt.invoke_model_with_response_stream(modelId=model, body=body).get("body"):
             if "chunk" in c:
                 d = json.loads(c["chunk"]["bytes"])
-                token = ((d.get("delta", {}).get("text", "") if "delta" in d else "".join([b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")])) if ic else d.get("completion", ""))
+                token = (d.get("delta", {}).get("text", "") if "delta" in d else "".join([b.get("text", "") for b in d.get("content", []) if b.get("type") == "text"])) if ic else d.get("completion", "")
                 txt += token; l.update(markdown.Markdown(txt))
     return txt, (hist + [{"role": "user", "content": [{"type": "text", "text": msg}]}, {"role": "assistant", "content": [{"type": "text", "text": txt}]}]) if txt.strip() else hist
 
