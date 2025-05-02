@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ultra-optimized-bedrock-chat"
 version = "0.2.7"
-description = "Super-ultra optimized AWS Bedrock chat interface (50 lines)"
+description = "Super-ultra optimized AWS Bedrock chat interface (38 lines)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
