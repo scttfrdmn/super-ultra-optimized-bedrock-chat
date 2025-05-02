@@ -4,9 +4,9 @@ from rich import console,live,markdown,table
 from .__version__ import __version__
 app,con=typer.Typer(rich_markup_mode="rich"),console.Console(highlight=False)
 @app.callback(invoke_without_command=True)
-def main(v:bool=typer.Option(False,"--version","-v"),p:str=typer.Option(None,"--profile"),r:str=typer.Option("us-east-1","--region"),c:typer.Context=typer.Context):
+def main(v:bool=typer.Option(False,"--version","-v"),p:str=typer.Option(None,"--profile"),r:str=typer.Option("us-east-1","--region"),a:bool=typer.Option(False,"--allow-provisioned",help="Allow access to models requiring provisioned throughput (hourly $$$)"),c:typer.Context=typer.Context):
     if v:con.print(f"v{__version__}");raise typer.Exit()
-    globals().update({"p":p,"r":r});c.invoked_subcommand or chat()
+    globals().update({"p":p,"r":r,"a":a});c.invoked_subcommand or chat()
 @app.command()
 def list_provisioned():
     """List active provisioned throughput commitments (hourly billing)"""
@@ -79,6 +79,7 @@ def list_models():
 def chat(clear:bool=False,all:bool=False):
     if clear:os.system("cls" if os.name=="nt" else "clear")
     s=boto3.Session(profile_name=globals().get("p"));r=globals().get("r","us-east-1")
+    allow_provisioned=globals().get("a",False) # Get the allow-provisioned flag
     rt,bd,ms,en=s.client("bedrock-runtime",region_name=r),s.client("bedrock",region_name=r),{},set()
     test=lambda m:json.dumps({"anthropic_version":"bedrock-2023-05-31","max_tokens":1,"messages":[{"role":"user","content":[{"type":"text","text":"."}]}]} if "anthropic" in m else {"inputText":".","textGenerationConfig":{"maxTokenCount":1}})
     with con.status("[cyan]Discovering models...[/cyan]"):
@@ -94,6 +95,14 @@ def chat(clear:bool=False,all:bool=False):
                 # Handle inference profiles correctly
                 prof_id = prof["inferenceProfileId"]
                 name = prof_id.split(".")[-1] # Get the base name without the "us." prefix
+                
+                # Check if it's a provisioned throughput model
+                is_provisioned = any(prov_term in prof_id.lower() for prov_term in ["provisioned", "throughput"]) or "claude-3-7" in prof_id.lower()
+                
+                # Skip provisioned models unless --allow-provisioned flag is set
+                if is_provisioned and not allow_provisioned:
+                    continue
+                    
                 ms[name]=prof_id
                 try:rt.invoke_model(modelId=prof_id,body=test(prof_id));en.add(name)
                 except:pass

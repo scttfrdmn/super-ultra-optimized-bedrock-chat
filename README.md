@@ -90,6 +90,7 @@ ultra-bedrock-chat
 - `--version` / `-v`: Display version number
 - `--region`: AWS region to use (default: us-east-1)
 - `--profile`: AWS profile to use (default: None, uses default profile)
+- `--allow-provisioned`: Allow access to models requiring provisioned throughput (hourly billing)
 
 ### Commands
 - **Default** (no command): Start chat interface
@@ -152,13 +153,16 @@ That example transcript alone is almost 20% the size of our entire codebase!
 
 ### Using Provisioned Throughput Models
 
-This chatbot supports AWS Bedrock's provisioned throughput models, which provide dedicated capacity for high-volume usage:
+This chatbot supports AWS Bedrock's provisioned throughput models, which provide dedicated capacity but incur hourly costs:
 
-1. From the model selection menu, choose any model with the `[Provisioned $]` type indicator
-2. Or directly enter a provisioned model ARN:
+1. **Access requires opt-in**: By default, provisioned throughput models are hidden
+2. Start with the `--allow-provisioned` flag to see available provisioned models:
    ```
-   Model (name/ID/ARN): arn:aws:bedrock:us-east-1:123456789012:provisioned-model/abcdef123456
+   ultra-bedrock-chat --allow-provisioned
    ```
+3. Choose a model with the `[Provisioned $]` type indicator from the menu
+
+**Note**: This tool only shows models that already have provisioned throughput set up. It does not create new provisioned throughput profiles.
 
 ⚠️ **IMPORTANT: Cost Warning** ⚠️
 
