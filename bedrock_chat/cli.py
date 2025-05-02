@@ -17,15 +17,15 @@ def main(clear:bool=False,all:bool=False,v:bool=typer.Option(False,"--version","
         try:
             for p in bd.list_inference_profiles().get("inferenceProfileSummaries",[]):
                 p_id=p["inferenceProfileId"];n=p_id.split(".")[-1]
-                if (any(t in p_id.lower() for t in ["provisioned","throughput"]) or "claude-3-7" in p_id.lower()) and not allow:continue
+                if any(t in p_id.lower() for t in ["provisioned","throughput","claude-3-7"]) and not allow:continue
                 ms[n]=p_id;try:rt.invoke_model(modelId=p_id,body=test(p_id));en.add(n)
                 except:pass
         except:pass
     t=table.Table(title=f"[bold cyan]Ultra Bedrock Chat v{__version__}[/bold cyan]",border_style="blue");[t.add_column(c,style=s) for c,s in [("Model","cyan"),("Type","yellow"),("ID","green")]]
-    for n,i in sorted(ms.items(),key=lambda x:(x[0] not in en,x[0])):if all or n in en:t.add_row(n,"[bold red]Provisioned $[/bold red]" if i.startswith("us.") and (any(t in i.lower() for t in ["provisioned","throughput"]) or "claude-3-7" in i.lower()) else "Inference Profile" if i.startswith("us.") else "On-Demand",i[:40]+"..." if len(i)>40 else i)
+    for n,i in sorted(ms.items(),key=lambda x:(x[0] not in en,x[0])):if all or n in en:t.add_row(n,"[bold red]Provisioned $[/bold red]" if i.startswith("us.") and any(t in i.lower() for t in ["provisioned","throughput","claude-3-7"]) else "Inference Profile" if i.startswith("us.") else "On-Demand",i[:40]+"..." if len(i)>40 else i)
     con.print(t);hist=[];if (inp:=typer.prompt("Model")).lower()=="exit":return
     if not (model:=inp if inp.startswith(("arn:","us.")) else ms.get(inp)):con.print("[bold red]Model not found![/bold red]");return
-    if any(t in model.lower() for t in ["provisioned","throughput"]) or "claude-3-7" in model.lower():con.print("[bold red]Warning:[/bold red] This model uses provisioned throughput which incurs hourly costs until explicitly deleted in AWS console")
+    if any(t in model.lower() for t in ["provisioned","throughput","claude-3-7"]):con.print("[bold red]Warning:[/bold red] This model uses provisioned throughput which incurs hourly costs until explicitly deleted in AWS console")
     while (msg:=typer.prompt("",prompt_suffix="You: "))!="exit":
         if msg=="clear":hist=[];con.print("[italic green]History cleared[/italic green]");continue
         try:
