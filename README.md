@@ -58,13 +58,13 @@ Despite its tiny size, this chatbot packs an impressive set of capabilities:
 Install with pipx (recommended):
 
 ```bash
-pipx install super-ultra-optimized-bedrock-chat==0.3.0
+pipx install super-ultra-optimized-bedrock-chat==0.9.0
 ```
 
 Or with pip:
 
 ```bash
-pip install super-ultra-optimized-bedrock-chat==0.3.0
+pip install super-ultra-optimized-bedrock-chat==0.9.0
 ```
 
 ### Why pipx?
@@ -119,7 +119,7 @@ If we had applied these same techniques to this README, it would be about 5 line
 ## 📝 Example Session
 
 ```
-┌─────────────────────── Super Ultra Bedrock Chat v0.3.0 ────────────────────────┐
+┌─────────────────────── Super Ultra Bedrock Chat v0.9.0 ────────────────────────┐
 │ Model           Type               ID                                    │
 │ claude-haiku    On-Demand          anthropic.claude-3-haiku-20240307-v1:0│
 │ claude-opus     On-Demand          anthropic.claude-3-opus-20240229-v1:0 │
